@@ -2,8 +2,11 @@ import { FaFacebookF, FaPlay } from 'react-icons/fa';
 import HeroImg from '../assets/dev.png';
 import { FaXTwitter } from 'react-icons/fa6';
 import { TiSocialLinkedin, TiSocialInstagram } from 'react-icons/ti';
+import { cards } from '../utils/Data';
 
 import './home.css';
+import Card from '../components/card/Card';
+import { v4 as uuid } from 'uuid';
 
 const Home = () => {
 	return (
@@ -50,6 +53,21 @@ const Home = () => {
 							</a>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<section className='services' id='services'>
+				<h3 className='section__label'>My Services</h3>
+				<h2 className='section__title'>Services Provided to my clients.</h2>
+				<div className='cards'>
+					{cards?.map((card) => (
+						<Card
+							key={uuid()}
+							icon={card?.icon}
+							title={card?.title}
+							features={card?.features}
+						/>
+					))}
 				</div>
 			</section>
 		</div>
