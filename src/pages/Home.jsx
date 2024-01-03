@@ -3,11 +3,15 @@ import HeroImg from '../assets/dev.png';
 import { FaXTwitter } from 'react-icons/fa6';
 import { TiSocialLinkedin, TiSocialInstagram } from 'react-icons/ti';
 import { cards } from '../utils/Data';
-
-import './home.css';
-import Card from '../components/card/Card';
 import { v4 as uuid } from 'uuid';
 import { useEffect, useRef } from 'react';
+import './home.css';
+import Card from '../components/card/Card';
+
+import Portfolio1 from '../assets/project-slider-img-1.webp';
+import Portfolio2 from '../assets/project-slider-img-2.webp';
+import Portfolio3 from '../assets/project-slider-img-3.webp';
+import Portfolio4 from '../assets/project-slider-img-4.webp';
 
 const Home = () => {
 	const skillRef = useRef(null);
@@ -131,6 +135,38 @@ const Home = () => {
 							<div className='skill__progress-line' data-width='95'></div>
 							<div className='skill__percentage'>95%</div>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className='portfolio' id='portfolio'>
+				<h3 className='section__label'>My Portfolio</h3>
+				<h2 className='section__title'>My Complete Projects</h2>
+
+				<div className='portfolio__grid'>
+					<div className='portfolio__card'>
+						<img src={Portfolio1} alt='portfolio 1' />
+						<div className='portfolio__card-title'>Portfolio 1</div>
+					</div>
+					<div className='portfolio__card'>
+						<img src={Portfolio2} alt='portfolio 2' />
+						<div className='portfolio__card-title'>Portfolio 2</div>
+					</div>
+					<div className='portfolio__card'>
+						<img src={Portfolio3} alt='portfolio 3' />
+						<div className='portfolio__card-title'>Portfolio 3</div>
+					</div>
+					<div className='portfolio__card'>
+						<img src={Portfolio4} alt='portfolio 4' />
+						<div className='portfolio__card-title'>Portfolio 4</div>
+					</div>
+					<div className='portfolio__card'>
+						<img src={Portfolio3} alt='portfolio 5' />
+						<div className='portfolio__card-title'>Portfolio 5</div>
+					</div>
+					<div className='portfolio__card'>
+						<img src={Portfolio1} alt='portfolio 6' />
+						<div className='portfolio__card-title'>Portfolio 6</div>
 					</div>
 				</div>
 			</section>
