@@ -7,8 +7,39 @@ import { cards } from '../utils/Data';
 import './home.css';
 import Card from '../components/card/Card';
 import { v4 as uuid } from 'uuid';
+import { useEffect, useRef } from 'react';
 
 const Home = () => {
+	const skillRef = useRef(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						animateProgressbar();
+						observer.disconnect();
+					}
+				});
+			},
+			{ threshold: 0.5 }
+		);
+
+		observer.observe(skillRef.current);
+
+		return () => {
+			observer.disconnect();
+		};
+	}, []);
+
+	const animateProgressbar = () => {
+		const progressBars = document.querySelectorAll('.skill__progress-line');
+
+		progressBars.forEach((progressBar) => {
+			const percent = progressBar.getAttribute('data-width');
+			progressBar.style.width = `${percent}%`;
+		});
+	};
 	return (
 		<div className='container home'>
 			<section className='hero-section' id='home'>
@@ -68,6 +99,39 @@ const Home = () => {
 							features={card?.features}
 						/>
 					))}
+				</div>
+			</section>
+
+			<section className='skill' id='skills' ref={skillRef}>
+				<div className='skill__left'>
+					<h3 className='section__label'>My Skills</h3>
+					<h2 className='section__title'>My Specials skills are</h2>
+					<a href='/resume.pdf' download={'resume.pdf'} className='button'>
+						Get Resume
+					</a>
+				</div>
+				<div className='skill__right'>
+					<div className='skill__wrapper'>
+						<div className='skill__tag'>Development</div>
+						<div className='skill__box'>
+							<div className='skill__progress-line' data-width='75'></div>
+							<div className='skill__percentage'>75%</div>
+						</div>
+					</div>
+					<div className='skill__wrapper'>
+						<div className='skill__tag'>Design</div>
+						<div className='skill__box'>
+							<div className='skill__progress-line' data-width='85'></div>
+							<div className='skill__percentage'>85%</div>
+						</div>
+					</div>
+					<div className='skill__wrapper'>
+						<div className='skill__tag'>Cloud</div>
+						<div className='skill__box'>
+							<div className='skill__progress-line' data-width='95'></div>
+							<div className='skill__percentage'>95%</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
