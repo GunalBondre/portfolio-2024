@@ -1,0 +1,162 @@
+/* themes.css */
+
+/* Base Theme */
+:root {
+	--background-color: #f8f9fa;
+	--text-color: #333;
+	--primary-font-family: 'Poppins', sans-serif;
+	--secondary-font-family: ' Cormorant Garamond ', serif;
+	--nav-bg: #f8f9fa;
+	--special-text: #000;
+	--box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.6);
+	--circle-border: rgba(0, 0, 0, 0.25);
+}
+
+/* Dark Theme */
+.dark-theme {
+	--background-color: #2a2c39;
+	--text-color: #858792;
+	--nav-bg: #252734;
+	--special-text: #fff;
+	--box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+	--circle-border: rgba(255, 255, 255, 0.25);
+}
+
+* {
+	text-decoration: none;
+}
+html {
+	scroll-behavior: smooth !important;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: var(--primary-font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1060px;
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	color: var(--text-color);
+}
+
+p {
+	margin-bottom: 1em;
+	line-height: 1.6;
+	font-size: 18px;
+}
+
+/* Link Styles */
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Highlighting */
+.highlight {
+	color: var(--secondary-color);
+	font-weight: bold;
+}
+
+/* Button Styles */
+.button {
+	background-color: transparent;
+	color: var(--text-color);
+	border: 1px solid #3b3d49;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	border-radius: 30px;
+	height: 60px;
+	width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button:hover {
+	background-color: var(--secondary-color);
+	color: white;
+	text-decoration: none;
+}
+
+/* Responsive Typography */
+@media screen and (min-width: 600px) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.6rem;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+	}
+
+	h5 {
+		font-size: 1.1rem;
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.3rem;
+	}
+
+	h4 {
+		font-size: 1.1rem;
+	}
+
+	h5 {
+		font-size: 1rem;
+	}
+
+	h6 {
+		font-size: 0.9rem;
+	}
+
+	p {
+		font-size: 0.9rem;
+	}
+}
