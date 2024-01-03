@@ -35,7 +35,7 @@ const Home = () => {
 					<div className='hero-section__image'>
 						<img src={HeroImg} alt='hero image' />
 						<div className='hero-section__image-half-round-shape'></div>
-						<div className='socual-links'>
+						<div className='social-links'>
 							<a href=''>
 								<FaFacebookF />
 							</a>
