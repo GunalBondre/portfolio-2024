@@ -254,3 +254,28 @@
 	max-height: 300px;
 }
 /* portfolio section ends */
+
+/* testimonials section starts */
+.testimonials {
+	width: 100%;
+	padding: 60px 0;
+}
+
+.testimonials__card {
+	padding: 30px;
+	background-color: var(--nav-bg);
+	color: var(--text-color);
+	margin: 10px;
+	border: 1px solid var(--special-text);
+	border-radius: 20px;
+}
+
+.testimonials__text {
+	font-size: 22px;
+}
+
+.testimonials__author {
+	font-size: 22px;
+	margin-top: 30px;
+}
+/* testimonials section ends */

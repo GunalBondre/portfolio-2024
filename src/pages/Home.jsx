@@ -5,6 +5,7 @@ import { TiSocialLinkedin, TiSocialInstagram } from 'react-icons/ti';
 import { cards } from '../utils/Data';
 import { v4 as uuid } from 'uuid';
 import { useEffect, useRef } from 'react';
+import { register } from 'swiper/element/bundle';
 import './home.css';
 import Card from '../components/card/Card';
 
@@ -15,7 +16,7 @@ import Portfolio4 from '../assets/project-slider-img-4.webp';
 
 const Home = () => {
 	const skillRef = useRef(null);
-
+	const swiperRef = useRef(null);
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -34,6 +35,28 @@ const Home = () => {
 		return () => {
 			observer.disconnect();
 		};
+	}, []);
+
+	useEffect(() => {
+		register();
+
+		const params = {
+			breakpoints: {
+				280: {
+					slidesPerView: 1,
+				},
+				600: {
+					slidesPerView: 2,
+				},
+				991: {
+					slidesPerView: 3,
+				},
+			},
+		};
+
+		Object.assign(swiperRef.current, params);
+
+		swiperRef.current.initialize();
 	}, []);
 
 	const animateProgressbar = () => {
@@ -168,6 +191,71 @@ const Home = () => {
 						<img src={Portfolio1} alt='portfolio 6' />
 						<div className='portfolio__card-title'>Portfolio 6</div>
 					</div>
+				</div>
+			</section>
+
+			<section className='testimonials' id='testimonials'>
+				<h3 className='section__label'>Testimonials</h3>
+				<h2 className=' section__title'>Satisfied Clients Say</h2>
+				<div className='testimonials__wrapper'>
+					<swiper-container speed='500' ref={swiperRef} css-mode='true'>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Blake</div>
+								<div className='testimonials__author-title'>
+									CEO Carrington Atlantic
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Fallon</div>
+								<div className='testimonials__author-title'>
+									CEO Fallon Unlimited
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Sam</div>
+								<div className='testimonials__author-title'>CEO Van Kirk</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Steven</div>
+								<div className='testimonials__author-title'>
+									CEO carrington foundation
+								</div>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div className='testimonials__card'>
+								<div className='testimonials__text'>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Voluptatibus, enim.
+								</div>
+								<div className='testimonials__author'>Steve</div>
+								<div className='testimonials__author-title'>CEO Dan Joe</div>
+							</div>
+						</swiper-slide>
+					</swiper-container>
 				</div>
 			</section>
 		</div>
