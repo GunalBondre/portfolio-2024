@@ -13,7 +13,7 @@ export const ThemeProvider = ({ children }) => {
 	useEffect(() => {
 		const body = document.body;
 		body.className = isDarkTheme ? 'dark-theme' : '';
-	});
+	}, [isDarkTheme]);
 
 	return (
 		<ThemeContext.Provider value={{ isDarkTheme, toggleTheme }}>

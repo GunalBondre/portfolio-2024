@@ -78,9 +78,15 @@
 .bar {
 	width: 25px;
 	height: 3px;
-	background-color: #fff;
+	background-color: var(--special-text);
 	margin: 5px 0;
 	transition: 0.4s;
+}
+
+@media (max-width: 991px) {
+	.nav__wrapper {
+		padding: 0 50px;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -113,7 +119,7 @@
 		top: 60px;
 		left: 0;
 		width: 100%;
-		background-color: #333;
+		background-color: var(--nav-bg);
 		align-items: flex-start;
 		margin-top: 10px;
 	}
@@ -125,5 +131,11 @@
 
 	.mobile-menu {
 		display: flex;
+	}
+}
+
+@media (max-width: 500px) {
+	.nav__wrapper {
+		padding: 0 20px;
 	}
 }

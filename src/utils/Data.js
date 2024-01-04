@@ -35,4 +35,15 @@ export const cards = [
 			'Python',
 		],
 	},
+	{
+		icon: RiStackLine,
+		title: 'UI/UX Design',
+		features: [
+			'Landing Pages',
+			'User Flow',
+			'PRototyping',
+			'Wireframing',
+			'Mobile App Design',
+		],
+	},
 ];
